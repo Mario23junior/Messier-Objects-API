@@ -2,10 +2,13 @@ package com.project.messiercatalog.errorModularization;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class ModelErroReturn {
 
 	private Integer status;
 	private String message;
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy/MM/yyyy : HH:MM:SS")
 	private Date timestap;
 	private String path;
 
