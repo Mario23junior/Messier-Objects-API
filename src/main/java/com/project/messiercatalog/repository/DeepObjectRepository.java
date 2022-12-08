@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface DeepObjectRepository extends JpaRepository<DeepObject, Long>{
 
+	DeepObject findByNome(String nome);
+
 }

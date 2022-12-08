@@ -22,6 +22,7 @@ public class DeepObjectService {
 	}
 
 	public ResponseEntity<DeepObjectDTO> saveDeepObject(DeepObjectDTO deppDto) {
+		validValueDuplicationData(deppDto);
 		try {
 			DeepObject convertEntity = mapper.map(deppDto, DeepObject.class);
 			DeepObject convertBase = repository.save(convertEntity);
@@ -31,5 +32,15 @@ public class DeepObjectService {
 		} catch (Exception e) {
 			throw new HandlingErrorReturnMessage("Erro ao salvar objeto "+ deppDto.getNome() +" Por favor tente mais tarde");
 		}
+	}
+	
+	public void validValueDuplicationData(DeepObjectDTO deepObjectdto) {
+		DeepObject convertEntity = mapper.map(deepObjectdto, DeepObject.class);
+		DeepObject findValue = repository.findByNome(deepObjectdto.getNome());
+		if(findValue != null && findValue.getId() != convertEntity.getId()) {
+			throw new HandlingErrorReturnMessage("O objeto de nome : "+ deepObjectdto.getNome() +" já esta cadastrado");
+		}
+		
+		
 	}
 }
