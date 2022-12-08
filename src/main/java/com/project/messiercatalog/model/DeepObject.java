@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 public class DeepObject {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String image;
 	private String constelacao;
@@ -59,5 +59,13 @@ public class DeepObject {
 	public void setMagnitude(Double magnitude) {
 		this.magnitude = magnitude;
 	}
+
+	@Override
+	public String toString() {
+		return "DeepObject [id=" + id + ", image=" + image + ", constelacao=" + constelacao + ", nome=" + nome
+				+ ", magnitude=" + magnitude + "]";
+	}
+	
+	
 
 }

@@ -1,7 +1,7 @@
 package com.project.messiercatalog.dto;
 
 public class DeepObjectDTO {
-  
+
 	private Long id;
 	private String image;
 	private String constelacao;

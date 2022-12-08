@@ -1,0 +1,37 @@
+package com.project.messiercatalog.service;
+
+import com.project.messiercatalog.dto.DeepObjectDTO;
+import com.project.messiercatalog.model.DeepObject;
+import com.project.messiercatalog.repository.DeepObjectRepository;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+
+@Service
+public class DeepObjectService {
+
+	private DeepObjectRepository repository;
+	private ModelMapper mapper;
+
+	public DeepObjectService(DeepObjectRepository repository, ModelMapper mapper) {
+		this.mapper = mapper;
+		this.repository = repository;
+	}
+
+	public ResponseEntity<DeepObjectDTO> saveDeepObject(DeepObjectDTO deppDto) {
+		try {
+			DeepObject convertBase = savebody(mapper.map(deppDto, DeepObject.class));
+			return ResponseEntity
+					   .status(HttpStatus.OK)
+					   .body(mapper.map(convertBase, DeepObjectDTO.class));
+		} catch(Exception e) {
+			return new ResponseEntity<DeepObjectDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
+	
+	public DeepObject savebody(DeepObject deepObject) {
+		return repository.save(deepObject);
+	}
+}
