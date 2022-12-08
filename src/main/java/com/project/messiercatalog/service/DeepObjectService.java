@@ -1,5 +1,7 @@
 package com.project.messiercatalog.service;
 
+import java.util.Optional;
+
 import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
 import com.project.messiercatalog.model.DeepObject;
@@ -39,6 +41,16 @@ public class DeepObjectService {
 		DeepObject findValue = repository.findByNome(deepObjectdto.getNome());
 		if(findValue != null && findValue.getId() != convertEntity.getId()) {
  			throw new HandlingErrorReturnMessage("O objeto de nome : "+ deepObjectdto.getNome() +" já esta cadastrado");
+		}
+	}
+	
+	public ResponseEntity<DeepObjectDTO> listInfoId(Long id){
+		Optional<DeepObject> findid = repository.findById(id);
+		if(findid.isPresent()) {
+			DeepObjectDTO convert = mapper.map(findid.get(), DeepObjectDTO.class);
+			return ResponseEntity.ok(convert);
+		}else {
+			throw new HandlingErrorReturnMessage("Erro ao buscar objeto de id : "+ id +", Por favor tente mais tarde");
 		}
 	}
 }
