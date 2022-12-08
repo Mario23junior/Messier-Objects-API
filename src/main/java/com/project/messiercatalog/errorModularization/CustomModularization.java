@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.context.request.WebRequest;
 
 @RestControllerAdvice
-public class customModularization {
+public class CustomModularization {
 
 	@ExceptionHandler(HandlingErrorReturnMessage.class)
 	public ModelErroReturn returnErroCustom(HandlingErrorReturnMessage ex, WebRequest request) {
