@@ -1,14 +1,13 @@
 package com.project.messiercatalog.errorModularization;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class ModelErroReturn {
 
 	private Integer status;
 	private String message;
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yy/MM/yyyy : HH:MM:SS")
+//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ", locale = "pt_br")
 	private Date timestap;
 	private String path;
 
@@ -40,8 +39,10 @@ public class ModelErroReturn {
 		this.message = message;
 	}
 
-	public Date getTimestap() {
-		return timestap;
+	public String getTimestap() {
+ 	    SimpleDateFormat dateformt = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	    String stringdate = dateformt.format(timestap);
+		return stringdate;
 	}
 
 	public void setTimestap(Date timestap) {

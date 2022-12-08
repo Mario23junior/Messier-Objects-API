@@ -38,9 +38,7 @@ public class DeepObjectService {
 		DeepObject convertEntity = mapper.map(deepObjectdto, DeepObject.class);
 		DeepObject findValue = repository.findByNome(deepObjectdto.getNome());
 		if(findValue != null && findValue.getId() != convertEntity.getId()) {
-			throw new HandlingErrorReturnMessage("O objeto de nome : "+ deepObjectdto.getNome() +" já esta cadastrado");
+ 			throw new HandlingErrorReturnMessage("O objeto de nome : "+ deepObjectdto.getNome() +" já esta cadastrado");
 		}
-		
-		
 	}
 }
