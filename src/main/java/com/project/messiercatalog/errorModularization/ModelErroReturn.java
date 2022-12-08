@@ -7,8 +7,7 @@ public class ModelErroReturn {
 
 	private Integer status;
 	private String message;
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd@HH:mm:ss.SSSZ", locale = "pt_br")
-	private Date timestap;
+ 	private Date timestap;
 	private String path;
 
 	public ModelErroReturn() {
