@@ -1,4 +1,4 @@
-package com.project.messiercatalog;
+package com.project.messiercatalog.controller;
 
 import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.service.DeepObjectService;
