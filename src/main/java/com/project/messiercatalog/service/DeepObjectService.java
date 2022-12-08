@@ -1,6 +1,7 @@
 package com.project.messiercatalog.service;
 
 import com.project.messiercatalog.dto.DeepObjectDTO;
+import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
 import com.project.messiercatalog.model.DeepObject;
 import com.project.messiercatalog.repository.DeepObjectRepository;
 
@@ -28,7 +29,7 @@ public class DeepObjectService {
 					.body(mapper.map(convertBase, DeepObjectDTO.class));
 			return response;
 		} catch (Exception e) {
-			return new ResponseEntity<DeepObjectDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
+			throw new HandlingErrorReturnMessage("Erro ao salvar objeto "+ deppDto.getNome() +" Por favor tente mais tarde");
 		}
 	}
 }
