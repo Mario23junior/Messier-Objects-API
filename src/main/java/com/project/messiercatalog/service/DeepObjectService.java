@@ -24,11 +24,10 @@ public class DeepObjectService {
 		try {
 			DeepObject convertEntity = mapper.map(deppDto, DeepObject.class);
 			DeepObject convertBase = repository.save(convertEntity);
-			ResponseEntity<DeepObjectDTO> response = ResponseEntity
-					.status(HttpStatus.OK)
+			ResponseEntity<DeepObjectDTO> response = ResponseEntity.status(HttpStatus.OK)
 					.body(mapper.map(convertBase, DeepObjectDTO.class));
 			return response;
-		} catch(Exception e) {
+		} catch (Exception e) {
 			return new ResponseEntity<DeepObjectDTO>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
