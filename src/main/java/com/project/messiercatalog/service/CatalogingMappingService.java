@@ -54,5 +54,22 @@ public class CatalogingMappingService {
 			throw new HandlingErrorReturnMessage("Estes parametros já foram cadastrados.");
 		}
 	}
+	
+	public ResponseEntity<CatalogingMappingDTO> updateCatalogin(Long id, 
+			CatalogingMappingDTO cataloginDto){
+		Optional<CatalogingMapping> findid = repository.findById(id);
+		if(findid.isPresent()) {
+			CatalogingMapping data = findid.get();
+			data.setDeclinacao(cataloginDto.getDeclinacao());
+			data.setNgc(cataloginDto.getNgc());
+			data.setRaio(cataloginDto.getRaio());
+			repository.save(data);
+			return ResponseEntity.ok(mapper.map(data, CatalogingMappingDTO.class));
+		}else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 
 }
+
+ 
