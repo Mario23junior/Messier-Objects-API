@@ -4,6 +4,7 @@ import com.project.messiercatalog.dto.CatalogingMappingDTO;
 import com.project.messiercatalog.service.CatalogingMappingService;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,7 +36,12 @@ public class CatalogingMappingController {
 	@PutMapping("{id}")
 	public ResponseEntity<CatalogingMappingDTO> update(@PathVariable Long id, 
 			@RequestBody CatalogingMappingDTO catalogMDto){
-		return service.updateCatalogin(id, catalogMDto);
-		
+		return service.updateCatalogin(id, catalogMDto);	
 	}
+	
+	@DeleteMapping("{id}")
+	public ResponseEntity<CatalogingMappingDTO> delete(@PathVariable Long id){
+		return service.delete(id);
+	}
+	
 }

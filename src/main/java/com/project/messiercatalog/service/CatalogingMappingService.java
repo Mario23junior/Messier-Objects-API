@@ -69,6 +69,17 @@ public class CatalogingMappingService {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
+	
+	public ResponseEntity<CatalogingMappingDTO> delete(Long id) {
+		Optional<CatalogingMapping> listid = repository.findById(id);
+		if (listid.isPresent()) {
+			repository.delete(listid.get());
+			return new ResponseEntity<CatalogingMappingDTO>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+
 
 }
 
