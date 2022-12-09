@@ -22,7 +22,8 @@ public class CatalogingMappingService {
 	}
 	
 	
-	public ResponseEntity<CatalogingMappingDTO> saveDeepObject(CatalogingMappingDTO catalaMdTO) {
+	public ResponseEntity<CatalogingMappingDTO> saveCatalogin(CatalogingMappingDTO catalaMdTO) {
+		validValueDuplicationData(catalaMdTO);
  		try {
  			CatalogingMapping convertEntity = mapper.map(catalaMdTO, CatalogingMapping.class);
  			CatalogingMapping convertBase = repository.save(convertEntity);
@@ -32,6 +33,16 @@ public class CatalogingMappingService {
 		} catch (Exception e) {
 			throw new HandlingErrorReturnMessage(
 					"Erro ao salvar dados Por favor tente mais tarde");
+		}
+	}
+	
+	
+	public void validValueDuplicationData(CatalogingMappingDTO catalogingMapDto) {
+		CatalogingMapping convertEntity = mapper.map(catalogingMapDto, CatalogingMapping.class);
+		CatalogingMapping findValue = repository.findByNgc(catalogingMapDto.getNgc());
+		if (findValue != null && findValue.getId() != convertEntity.getId()) {
+			throw new HandlingErrorReturnMessage(
+					"Estes parametros já foram cadastrados.");
 		}
 	}
 

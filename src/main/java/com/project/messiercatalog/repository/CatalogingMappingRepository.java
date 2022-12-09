@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CatalogingMappingRepository extends JpaRepository<CatalogingMapping, Long>{
 
+	CatalogingMapping findByNgc(String ngc);
+
 }

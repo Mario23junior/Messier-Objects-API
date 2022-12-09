@@ -21,6 +21,6 @@ public class CatalogingMappingController {
 
 	@PostMapping
 	public ResponseEntity<CatalogingMappingDTO> save(@RequestBody CatalogingMappingDTO catalgDto) {
-		return service.saveDeepObject(catalgDto);
+		return service.saveCatalogin(catalgDto);
 	}
 }
