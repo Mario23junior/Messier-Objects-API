@@ -53,4 +53,19 @@ public class DeepObjectService {
 			throw new HandlingErrorReturnMessage("Erro ao buscar objeto de id : "+ id +", Por favor tente mais tarde");
 		}
 	}
+	
+	public ResponseEntity<DeepObjectDTO> update(DeepObjectDTO deepObjectDto, Long id) {		
+		Optional<DeepObject> findbase = repository.findById(id);
+		if(findbase.isPresent()) {
+			DeepObject data = findbase.get();
+			data.setConstelacao(deepObjectDto.getConstelacao());
+			data.setImage(deepObjectDto.getImage());
+			data.setMagnitude(deepObjectDto.getMagnitude());
+			data.setNome(deepObjectDto.getNome());
+			repository.save(data);
+			return ResponseEntity.ok(mapper.map(data, DeepObjectDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
 }
