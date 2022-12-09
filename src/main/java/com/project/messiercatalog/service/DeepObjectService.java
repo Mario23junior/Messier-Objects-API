@@ -32,31 +32,34 @@ public class DeepObjectService {
 					.body(mapper.map(convertBase, DeepObjectDTO.class));
 			return response;
 		} catch (Exception e) {
-			throw new HandlingErrorReturnMessage("Erro ao salvar objeto "+ deppDto.getNome() +" Por favor tente mais tarde");
+			throw new HandlingErrorReturnMessage(
+					"Erro ao salvar objeto " + deppDto.getNome() + " Por favor tente mais tarde");
 		}
 	}
-	
+
 	public void validValueDuplicationData(DeepObjectDTO deepObjectdto) {
 		DeepObject convertEntity = mapper.map(deepObjectdto, DeepObject.class);
 		DeepObject findValue = repository.findByNome(deepObjectdto.getNome());
-		if(findValue != null && findValue.getId() != convertEntity.getId()) {
- 			throw new HandlingErrorReturnMessage("O objeto de nome : "+ deepObjectdto.getNome() +" já esta cadastrado");
+		if (findValue != null && findValue.getId() != convertEntity.getId()) {
+			throw new HandlingErrorReturnMessage(
+					"O objeto de nome : " + deepObjectdto.getNome() + " já esta cadastrado");
 		}
 	}
-	
-	public ResponseEntity<DeepObjectDTO> listInfoId(Long id){
+
+	public ResponseEntity<DeepObjectDTO> listInfoId(Long id) {
 		Optional<DeepObject> findid = repository.findById(id);
-		if(findid.isPresent()) {
+		if (findid.isPresent()) {
 			DeepObjectDTO convert = mapper.map(findid.get(), DeepObjectDTO.class);
 			return ResponseEntity.ok(convert);
-		}else {
-			throw new HandlingErrorReturnMessage("Erro ao buscar objeto de id : "+ id +", Por favor tente mais tarde");
+		} else {
+			throw new HandlingErrorReturnMessage(
+					"Erro ao buscar objeto de id : " + id + ", Por favor tente mais tarde");
 		}
 	}
-	
-	public ResponseEntity<DeepObjectDTO> update(DeepObjectDTO deepObjectDto, Long id) {		
+
+	public ResponseEntity<DeepObjectDTO> update(DeepObjectDTO deepObjectDto, Long id) {
 		Optional<DeepObject> findbase = repository.findById(id);
-		if(findbase.isPresent()) {
+		if (findbase.isPresent()) {
 			DeepObject data = findbase.get();
 			data.setConstelacao(deepObjectDto.getConstelacao());
 			data.setImage(deepObjectDto.getImage());
@@ -68,4 +71,15 @@ public class DeepObjectService {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
+
+	public ResponseEntity<DeepObjectDTO> delete(Long id) {
+		Optional<DeepObject> listid = repository.findById(id);
+		if (listid.isPresent()) {
+			repository.delete(listid.get());
+			return new ResponseEntity<DeepObjectDTO>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+	}
+
 }
