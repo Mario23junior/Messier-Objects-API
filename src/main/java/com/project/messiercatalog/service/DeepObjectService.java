@@ -1,6 +1,8 @@
 package com.project.messiercatalog.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
@@ -23,6 +25,20 @@ public class DeepObjectService {
 		this.repository = repository;
 	}
 
+
+	public List<DeepObjectDTO> findAll() {
+      try {
+    	  List<DeepObject> list = repository.findAll();
+    	  return list
+    			  .stream()
+    			  .map(l -> mapper.map(l, DeepObjectDTO.class))
+    			  .collect(Collectors.toList());
+      }catch(Exception e) {
+			throw new HandlingErrorReturnMessage("Erro ao listar parametro de observação.");
+      }
+ }
+
+	
 	public ResponseEntity<DeepObjectDTO> saveDeepObject(DeepObjectDTO deppDto) {
 		validValueDuplicationData(deppDto);
 		try {

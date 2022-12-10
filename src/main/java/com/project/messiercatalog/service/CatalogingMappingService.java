@@ -1,6 +1,8 @@
 package com.project.messiercatalog.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.project.messiercatalog.dto.CatalogingMappingDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
@@ -22,6 +24,19 @@ public class CatalogingMappingService {
 		this.mapper = mapper;
 		this.repository = repository;
 	}
+	
+	public List<CatalogingMappingDTO> findAll() {
+	      try {
+	    	  List<CatalogingMapping> list = repository.findAll();
+	    	  return list
+	    			  .stream()
+	    			  .map(l -> mapper.map(l, CatalogingMappingDTO.class))
+	    			  .collect(Collectors.toList());
+	      }catch(Exception e) {
+				throw new HandlingErrorReturnMessage("Erro ao listar parametro de observação.");
+	      }
+		}
+
 
 	public ResponseEntity<CatalogingMappingDTO> saveCatalogin(CatalogingMappingDTO catalaMdTO) {
 		validValueDuplicationData(catalaMdTO);

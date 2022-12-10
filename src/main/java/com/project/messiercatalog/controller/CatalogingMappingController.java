@@ -1,5 +1,7 @@
 package com.project.messiercatalog.controller;
 
+import java.util.List;
+
 import com.project.messiercatalog.dto.CatalogingMappingDTO;
 import com.project.messiercatalog.service.CatalogingMappingService;
 
@@ -31,6 +33,11 @@ public class CatalogingMappingController {
 	@GetMapping("{id}")
 	public ResponseEntity<CatalogingMappingDTO> listid(@PathVariable Long id) {
 		return service.listCatalogin(id);
+	}
+	
+	@GetMapping
+	public List<CatalogingMappingDTO> listAllBase() {
+		return service.findAll();
 	}
 	
 	@PutMapping("{id}")

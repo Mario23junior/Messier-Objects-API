@@ -1,5 +1,7 @@
 package com.project.messiercatalog.controller;
 
+import java.util.List;
+
 import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.service.DeepObjectService;
 
@@ -31,6 +33,11 @@ public class DeepObjectCotroller {
 	@GetMapping("{id}")
 	public ResponseEntity<DeepObjectDTO> listid(@PathVariable Long id) {
 		return service.listInfoId(id);
+	}
+	
+	@GetMapping
+	public List<DeepObjectDTO> listAll() {
+		return service.findAll();
 	}
 
 	@PutMapping("{id}")
