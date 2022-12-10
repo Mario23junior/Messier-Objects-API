@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class ObservationParameters {
@@ -15,6 +16,10 @@ public class ObservationParameters {
 	private String assecaoReta;
 	private Double idade;
 	private Double DistanciaTerra;
+	
+
+	@ManyToOne
+	private DeepObject deepObject;
 
 	public ObservationParameters() {
 		// TODO Auto-generated constructor stub
@@ -59,5 +64,14 @@ public class ObservationParameters {
 	public void setDistanciaTerra(Double distanciaTerra) {
 		DistanciaTerra = distanciaTerra;
 	}
+
+	public DeepObject getDeepObject() {
+		return deepObject;
+	}
+
+	public void setDeepObject(DeepObject deepObject) {
+		this.deepObject = deepObject;
+	}
+	
 
 }

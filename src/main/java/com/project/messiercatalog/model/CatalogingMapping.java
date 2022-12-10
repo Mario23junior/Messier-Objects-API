@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class CatalogingMapping {
@@ -14,6 +15,9 @@ public class CatalogingMapping {
 	private String ngc;
 	private String declinacao;
 	private Double raio;
+
+	@ManyToOne
+	private DeepObject deepObject;
 
 	public CatalogingMapping() {
 		// TODO Auto-generated constructor stub
@@ -49,6 +53,14 @@ public class CatalogingMapping {
 
 	public void setRaio(Double raio) {
 		this.raio = raio;
+	}
+
+	public DeepObject getDeepObject() {
+		return deepObject;
+	}
+
+	public void setDeepObject(DeepObject deepObject) {
+		this.deepObject = deepObject;
 	}
 
 }
