@@ -1,11 +1,11 @@
 package com.project.messiercatalog.service;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.dto.ObservationParametersDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
-import com.project.messiercatalog.model.DeepObject;
 import com.project.messiercatalog.model.ObservationParameters;
 import com.project.messiercatalog.repository.ObservationParametersRepository;
 
@@ -23,6 +23,18 @@ public class ObservationParametersService {
 	public ObservationParametersService(ObservationParametersRepository repository, ModelMapper mapper) {
 		this.mapper = mapper;
 		this.repository = repository;
+	}
+
+	public List<ObservationParametersDTO> findAll() {
+      try {
+    	  List<ObservationParameters> list = repository.findAll();
+    	  return list
+    			  .stream()
+    			  .map(l -> mapper.map(l, ObservationParametersDTO.class))
+    			  .collect(Collectors.toList());
+      }catch(Exception e) {
+			throw new HandlingErrorReturnMessage("Erro ao listar parametro de observação.");
+      }
 	}
 
 	public ResponseEntity<ObservationParametersDTO> save(ObservationParametersDTO obserVationDto) {
@@ -73,5 +85,4 @@ public class ObservationParametersService {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
-
 }

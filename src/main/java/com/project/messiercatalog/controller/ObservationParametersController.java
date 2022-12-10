@@ -1,5 +1,7 @@
 package com.project.messiercatalog.controller;
 
+import java.util.List;
+
 import com.project.messiercatalog.dto.ObservationParametersDTO;
 import com.project.messiercatalog.service.ObservationParametersService;
 
@@ -31,6 +33,11 @@ public class ObservationParametersController {
 	@GetMapping("{id}")
 	public ResponseEntity<ObservationParametersDTO> list(@PathVariable Long id) {
 		return service.listId(id);
+	}
+	
+	@GetMapping
+	public List<ObservationParametersDTO> listAll() {
+		return service.findAll();
 	}
 
 	@PutMapping("{id}")
