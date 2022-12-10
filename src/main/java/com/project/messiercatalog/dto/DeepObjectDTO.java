@@ -1,5 +1,7 @@
 package com.project.messiercatalog.dto;
 
+import java.util.List;
+
 public class DeepObjectDTO {
 
 	private Long id;
@@ -7,6 +9,9 @@ public class DeepObjectDTO {
 	private String constelacao;
 	private String nome;
 	private Double magnitude;
+
+	private List<CatalogingMappingDTO> catalogingMappingDto;
+	private List<ObservationParametersDTO> observationParametersDto;
 
 	public DeepObjectDTO() {
 		// TODO Auto-generated constructor stub
@@ -51,4 +56,21 @@ public class DeepObjectDTO {
 	public void setMagnitude(Double magnitude) {
 		this.magnitude = magnitude;
 	}
+
+	public List<CatalogingMappingDTO> getCatalogingMappingDto() {
+		return catalogingMappingDto;
+	}
+
+	public void setCatalogingMappingDto(List<CatalogingMappingDTO> catalogingMappingDto) {
+		this.catalogingMappingDto = catalogingMappingDto;
+	}
+
+	public List<ObservationParametersDTO> getObservationParametersDto() {
+		return observationParametersDto;
+	}
+
+	public void setObservationParametersDto(List<ObservationParametersDTO> observationParametersDto) {
+		this.observationParametersDto = observationParametersDto;
+	}
+
 }

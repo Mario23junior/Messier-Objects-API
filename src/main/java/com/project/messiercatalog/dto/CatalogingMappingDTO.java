@@ -6,6 +6,8 @@ public class CatalogingMappingDTO {
 	private String ngc;
 	private String declinacao;
 	private Double raio;
+	
+	private DeepObjectDTO deepObjectDto;
 
 	public CatalogingMappingDTO() {
 		// TODO Auto-generated constructor stub
@@ -42,4 +44,13 @@ public class CatalogingMappingDTO {
 	public void setRaio(Double raio) {
 		this.raio = raio;
 	}
+
+	public DeepObjectDTO getDeepObjectDto() {
+		return deepObjectDto;
+	}
+
+	public void setDeepObjectDto(DeepObjectDTO deepObjectDto) {
+		this.deepObjectDto = deepObjectDto;
+	}
+	
 }

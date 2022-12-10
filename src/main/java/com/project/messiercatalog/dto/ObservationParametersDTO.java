@@ -7,6 +7,8 @@ public class ObservationParametersDTO {
 	private String assecaoReta;
 	private Double idade;
 	private Double DistanciaTerra;
+	
+	private DeepObjectDTO deepObjectDto;
 
 	public ObservationParametersDTO() {
 		// TODO Auto-generated constructor stub
@@ -52,4 +54,13 @@ public class ObservationParametersDTO {
 		DistanciaTerra = distanciaTerra;
 	}
 
+	public DeepObjectDTO getDeepObjectDto() {
+		return deepObjectDto;
+	}
+
+	public void setDeepObjectDto(DeepObjectDTO deepObjectDto) {
+		this.deepObjectDto = deepObjectDto;
+	}
+
+	
 }
