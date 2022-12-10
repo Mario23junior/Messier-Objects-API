@@ -2,8 +2,10 @@ package com.project.messiercatalog.service;
 
 import java.util.Optional;
 
+import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.dto.ObservationParametersDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
+import com.project.messiercatalog.model.DeepObject;
 import com.project.messiercatalog.model.ObservationParameters;
 import com.project.messiercatalog.repository.ObservationParametersRepository;
 
@@ -59,6 +61,16 @@ public class ObservationParametersService {
 		} else {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 
+		}
+	}
+
+	public ResponseEntity<ObservationParametersDTO> delete(Long id) {
+		Optional<ObservationParameters> listid = repository.findById(id);
+		if (listid.isPresent()) {
+			repository.delete(listid.get());
+			return new ResponseEntity<ObservationParametersDTO>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 	}
 
