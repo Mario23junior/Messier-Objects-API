@@ -2,7 +2,6 @@ package com.project.messiercatalog.service;
 
 import java.util.Optional;
 
-import com.project.messiercatalog.dto.DeepObjectDTO;
 import com.project.messiercatalog.dto.ObservationParametersDTO;
 import com.project.messiercatalog.exceptions.HandlingErrorReturnMessage;
 import com.project.messiercatalog.model.ObservationParameters;
@@ -46,4 +45,21 @@ public class ObservationParametersService {
 					"Erro ao buscar objeto de id : " + id + ", Por favor tente mais tarde");
 		}
 	}
+
+	public ResponseEntity<ObservationParametersDTO> updateDate(ObservationParametersDTO obserVatParamDto, Long id) {
+		Optional<ObservationParameters> findBaseId = repository.findById(id);
+		if (findBaseId.isPresent()) {
+			ObservationParameters base = findBaseId.get();
+			base.setAssecaoReta(obserVatParamDto.getAssecaoReta());
+			base.setDistanciaTerra(obserVatParamDto.getDistanciaTerra());
+			base.setIdade(obserVatParamDto.getIdade());
+			base.setTipo(obserVatParamDto.getTipo());
+			repository.save(base);
+			return ResponseEntity.ok(mapper.map(base, ObservationParametersDTO.class));
+		} else {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+
+		}
+	}
+
 }
