@@ -560,21 +560,39 @@ public class CargaBaseSobre {
 		
 		CatalogingMappingDTO c30 = new CatalogingMappingDTO();
 		c30.setId(30l);
-		c30.setDeclinacao("");
-		c30.setNgc("");
-		c30.setRaio(0.0);
+		c30.setDeclinacao("-23° 10′ 47,5″");
+		c30.setNgc("7099");
+		c30.setRaio(0.9);
 		ObservationParametersDTO o30 = new ObservationParametersDTO();
 		o30.setId(30l);
-		o30.setAssecaoReta("");
-		o30.setDistanciaTerra(0.0);
-		o30.setIdade(0.0);
-		o30.setTipo("");
+		o30.setAssecaoReta("21h 40min 25s");
+		o30.setDistanciaTerra(2941.6);
+		o30.setIdade(12.93);
+		o30.setTipo("sAglomerado globular");
 		DeepObjectDTO d30 = new DeepObjectDTO();
 		d30.setId(30l);
-		d30.setImage("");
-		d30.setConstelacao("");
-		d30.setMagnitude(0.0);
-		d30.setNome("");
+		d30.setImage("http://cdn.spacetelescope.org/archives/images/screen/heic0918a.jpg");
+		d30.setConstelacao("Capricórnio");
+		d30.setMagnitude(8.5);
+		d30.setNome("M30");
+		
+		CatalogingMappingDTO c31 = new CatalogingMappingDTO();
+		c31.setId(31l);
+		c31.setDeclinacao("");
+		c31.setNgc("");
+		c31.setRaio(0.0);
+		ObservationParametersDTO o31 = new ObservationParametersDTO();
+		o31.setId(31l);
+		o31.setAssecaoReta("");
+		o31.setDistanciaTerra(0.0);
+		o31.setIdade(0.0);
+		o31.setTipo("");
+		DeepObjectDTO d31 = new DeepObjectDTO();
+		d31.setId(31l);
+		d31.setImage("");
+		d31.setConstelacao("");
+		d31.setMagnitude(0.0);
+		d31.setNome("");
 		
 		
 		catalRepository.saveAll(Arrays.asList(mapper.map(c1, CatalogingMapping.class)));
@@ -632,7 +650,6 @@ public class CargaBaseSobre {
 		catalRepository.saveAll(Arrays.asList(mapper.map(c14, CatalogingMapping.class)));
 		obserRepository.saveAll(Arrays.asList(mapper.map(o14, ObservationParameters.class)));
 		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d14, DeepObject.class)));
-		
 		
 		catalRepository.saveAll(Arrays.asList(mapper.map(c15, CatalogingMapping.class)));
 		obserRepository.saveAll(Arrays.asList(mapper.map(o15, ObservationParameters.class)));
@@ -693,16 +710,12 @@ public class CargaBaseSobre {
 		catalRepository.saveAll(Arrays.asList(mapper.map(c29, CatalogingMapping.class)));
 		obserRepository.saveAll(Arrays.asList(mapper.map(o29, ObservationParameters.class)));
 		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d29, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c30, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o30, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d30, DeepObject.class)));
 	}
 }
-
-
-
-
-
-
-
-
 
 
 
