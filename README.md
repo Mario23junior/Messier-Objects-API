@@ -1,4 +1,4 @@
-# Movie APP
+# Messier objects
 
 Este projeto inicialmente teve como principal objetivo o poder de trazer um código pratico e habilidoso sobre a estrutura principal, a interoperabilidade de se comunicar e se-multar conforme os parâmetros enviado do back-end  todos o seu fluxo de dados que esta sendo utilizado esta sendo operado pela API movie-api.
 
@@ -7,7 +7,7 @@ Este projeto inicialmente teve como principal objetivo o poder de trazer um cód
  </p>
 
    
-  <h3 align="center"> Scientific Galaxy API</h3>
+  <h3 align="center"> Virtual map of messier objects API</h3>
 
   <h4 align="center">
      <br />
