@@ -1,6 +1,6 @@
 # Messier objects
 
-Este projeto inicialmente teve como principal objetivo o poder de trazer um código pratico e habilidoso sobre a estrutura principal, a interoperabilidade de se comunicar e se-multar conforme os parâmetros enviado do back-end  todos o seu fluxo de dados que esta sendo utilizado esta sendo operado pela API movie-api.
+O objetivo desta API e listar os objetos do catálogo Messier, iniciado pelo astrônomo Charles Messierno século XVIII e revisado ao longo dos anos, inclui alguns dos objetos astronômicos mais fascinantes que podem ser observados no Hemisfério Norte da Terra. Entre eles estão objetos do céu profundo que podem ser vistos com detalhes impressionantes usando telescópios maiores, mas também são brilhantes o suficiente para serem vistos por um pequeno telescópio.
 
 <p align="center">
   <img src="doc/messierlogo.jpg" alt="App Capture"/>
@@ -22,15 +22,15 @@ Este projeto inicialmente teve como principal objetivo o poder de trazer um cód
 </div>
 
  <h3 align="center">
-API REST de código aberto para dados de consulta e pesquisa, as informações contida foram desenvolvidas usando como base a estruturas da <a href="https://www.nasa.gov/subject/6893/nebulae/" target="_blank">NASA</a>
- e o laboratorio <a href="https://chandra.harvard.edu/photo/2007/orion/" target="_blank">Chandra</a> usando dados estruturais da base organizacional.
+ 
 <p align="center">
  
 <p align="center">
+Os dados capturados para esta listagem esta no site da <a href="https://www.nasa.gov/subject/14467/hubbles-messier-catalog/" target="_blank">NASA</a> visando dados pertinentes
   <a href="https://github.com/Mario23junior/Galaxy-API/runs/7950437483?check_suite_focus=true"><img src="https://github.com/Mario23junior/Galaxy-API/actions/workflows/Maven.yml/badge.svg"></a>
+  
 <a href="https://en.wikipedia.org/wiki/Representational_state_transfer"><img src="https://img.shields.io/badge/interface%20-build-green.svg"></a>
 </p>
-
 
 ## 🔩 Instruções para uso local
 
