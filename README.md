@@ -26,11 +26,12 @@ O objetivo desta API e listar os objetos do catálogo Messier, iniciado pelo ast
 <p align="center">
  
 <p align="center">
-Os dados capturados para esta listagem esta no site da <a href="https://www.nasa.gov/subject/14467/hubbles-messier-catalog/" target="_blank">NASA</a> visando dados pertinentes
+Os dados capturados para esta listagem esta no site da <a href="https://www.nasa.gov/subject/14467/hubbles-messier-catalog/" target="_blank">NASA</a> visando dados pertinentes do cataloga.
   <a href="https://github.com/Mario23junior/Galaxy-API/runs/7950437483?check_suite_focus=true"><img src="https://github.com/Mario23junior/Galaxy-API/actions/workflows/Maven.yml/badge.svg"></a>
   
 <a href="https://en.wikipedia.org/wiki/Representational_state_transfer"><img src="https://img.shields.io/badge/interface%20-build-green.svg"></a>
 </p>
+  
 
 ## 🔩 Instruções para uso local
 
