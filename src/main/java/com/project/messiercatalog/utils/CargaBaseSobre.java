@@ -1958,21 +1958,94 @@ public class CargaBaseSobre {
 		
 		CatalogingMappingDTO c106 = new CatalogingMappingDTO();
 		c106.setId(106l);
-		c106.setDeclinacao("");
-		c106.setNgc("");
-		c106.setRaio(0.0);
+		c106.setDeclinacao("+47˚ 17' 47''");
+		c106.setNgc("4258");
+		c106.setRaio(67.500);
 		ObservationParametersDTO o106 = new ObservationParametersDTO();
 		o106.setId(106l);
-		o106.setAssecaoReta("");
-		o106.setDistanciaTerra(0.0);
-		o106.setIdade(0.0);
-		o106.setTipo("");
+		o106.setAssecaoReta(" 12h 19 min 2 s");
+		o106.setDistanciaTerra(23.680000);
+		o106.setIdade(1.328e+13);
+		o106.setTipo("Galáxia espiral");
 		DeepObjectDTO d106 = new DeepObjectDTO();
 		d106.setId(106l);
-		d106.setImage("");
-		d106.setConstelacao("");
-		d106.setMagnitude(0.0);
-		d106.setNome("");
+		d106.setImage("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Messier_106_by_Spitzer.jpg/800px-Messier_106_by_Spitzer.jpg");
+		d106.setConstelacao("Cães de Caça");
+		d106.setMagnitude(9.5);
+		d106.setNome("M106");
+		
+		CatalogingMappingDTO c107 = new CatalogingMappingDTO();
+		c107.setId(107l);
+		c107.setDeclinacao("-13˚ 3' 2''");
+		c107.setNgc("6171");
+		c107.setRaio(39.5);
+		ObservationParametersDTO o107 = new ObservationParametersDTO();
+		o107.setId(107l);
+		o107.setAssecaoReta("16h 32 min 32 s");
+		o107.setDistanciaTerra(20.000);
+		o107.setIdade(0.0);
+		o107.setTipo("Aglomerado globular");
+		DeepObjectDTO d107 = new DeepObjectDTO();
+		d107.setId(107l);
+		d107.setImage("https://cdn.eso.org/images/thumb700x/eso1048a.jpg");
+		d107.setConstelacao("Ofiúco");
+		d107.setMagnitude(+8.85);
+		d107.setNome("M107");
+		
+		
+		CatalogingMappingDTO c108 = new CatalogingMappingDTO();
+		c108.setId(108l);
+		c108.setDeclinacao("+55˚ 39' 46''");
+		c108.setNgc("3556");
+		c108.setRaio(0.0);
+		ObservationParametersDTO o108 = new ObservationParametersDTO();
+		o108.setId(108l);
+		o108.setAssecaoReta("11h 11 min 32 s");
+		o108.setDistanciaTerra(0.0);
+		o108.setIdade(1.327e+13);
+		o108.setTipo("Galáxia espiral");
+		DeepObjectDTO d108 = new DeepObjectDTO();
+		d108.setId(108l);
+		d108.setImage("http://annesastronomynews.com/wp-content/uploads/2012/02/Messier-108-by-Ken-Crawford.jpg");
+		d108.setConstelacao(" Ursa Maior");
+		d108.setMagnitude(11.0);
+		d108.setNome("M108");
+		
+		CatalogingMappingDTO c109 = new CatalogingMappingDTO();
+		c109.setId(109l);
+		c109.setDeclinacao("+53˚ 22' 47''");
+		c109.setNgc("3992");
+		c109.setRaio(0.0);
+		ObservationParametersDTO o109 = new ObservationParametersDTO();
+		o109.setId(109l);
+		o109.setAssecaoReta("11h 57 min 37 s");
+		o109.setDistanciaTerra(0.0);
+		o109.setIdade(1.325e+13);
+		o109.setTipo("Galáxia espiral barrada");
+		DeepObjectDTO d109 = new DeepObjectDTO();
+		d109.setId(109l);
+		d109.setImage("https://upload.wikimedia.org/wikipedia/commons/5/57/Messier-109-NGC-3992.jpg");
+		d109.setConstelacao("Ursa Maior");
+		d109.setMagnitude(11.0);
+		d109.setNome("M109");
+		
+		CatalogingMappingDTO c110 = new CatalogingMappingDTO();
+		c110.setId(110l);
+		c110.setDeclinacao(" +41˚ 41' 10''");
+		c110.setNgc("205");
+		c110.setRaio(8.500);
+		ObservationParametersDTO o110 = new ObservationParametersDTO();
+		o110.setId(110l);
+		o110.setAssecaoReta(" 0h 40 min 26 s");
+		o110.setDistanciaTerra(0.0);
+		o110.setIdade(2.9);
+		o110.setTipo("Galáxia elíptica anã");
+		DeepObjectDTO d110 = new DeepObjectDTO();
+		d110.setId(110l);
+		d110.setImage("https://www.nasa.gov/sites/default/files/styles/full_width/public/thumbnails/image/m110.png?itok=6wjqn0a-");
+		d110.setConstelacao("Andrômeda");
+		d110.setMagnitude(10.0);
+		d110.setNome("M110");
 
 		catalRepository.saveAll(Arrays.asList(mapper.map(c1, CatalogingMapping.class)));
 		obserRepository.saveAll(Arrays.asList(mapper.map(o1, ObservationParameters.class)));
@@ -2329,6 +2402,94 @@ public class CargaBaseSobre {
 		catalRepository.saveAll(Arrays.asList(mapper.map(c89, CatalogingMapping.class)));
 		obserRepository.saveAll(Arrays.asList(mapper.map(o89, ObservationParameters.class)));
 		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d89, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c90, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o90, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d90, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c91, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o91, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d91, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c92, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o92, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d92, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c93, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o93, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d93, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c94, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o94, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d94, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c95, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o95, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d95, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c96, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o96, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d96, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c97, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o97, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d97, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c98, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o98, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d98, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c99, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o99, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d99, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c100, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o100, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d100, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c101, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o101, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d101, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c102, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o102, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d102, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c103, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o103, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d103, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c104, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o104, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d104, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c105, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o105, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d105, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c106, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o106, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d106, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c107, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o107, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d107, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c108, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o108, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d108, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c109, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o109, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d109, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c110, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o110, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d110, DeepObject.class)));
+		
+		catalRepository.saveAll(Arrays.asList(mapper.map(c110, CatalogingMapping.class)));
+		obserRepository.saveAll(Arrays.asList(mapper.map(o110, ObservationParameters.class)));
+		deepObjectRepository.saveAll(Arrays.asList(mapper.map(d110, DeepObject.class)));
 
 	}
 }
