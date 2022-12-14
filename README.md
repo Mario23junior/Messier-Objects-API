@@ -3,7 +3,7 @@
 Este projeto inicialmente teve como principal objetivo o poder de trazer um código pratico e habilidoso sobre a estrutura principal, a interoperabilidade de se comunicar e se-multar conforme os parâmetros enviado do back-end  todos o seu fluxo de dados que esta sendo utilizado esta sendo operado pela API movie-api.
 
 <p align="center">
-  <img src="doc/back.png" alt="App Capture"/>
+  <img src="doc/messierlogo.jpg" alt="App Capture"/>
  </p>
 
    
